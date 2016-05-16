@@ -9,7 +9,7 @@ var mongoose = require('mongoose');
 var appRoutes = require('./routes/app');
 
 var app = express();
-mongoose.connect('mongodb://<jmccommas>:<unicas123>@ds023442.mlab.com:23442/messenger');
+mongoose.connect('mongodb://<jmccommas>:<angular>@ds023442.mlab.com:23442/heroku_wlkg18kj');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -42,6 +42,7 @@ export class MessageInputComponent implements OnInit {
                     error => console.error(error)
                 );
         }
+
     }
 
     onCancel() {

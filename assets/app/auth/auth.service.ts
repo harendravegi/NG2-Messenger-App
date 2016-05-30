@@ -10,7 +10,7 @@ export class AuthService {
     signup(user: User) {
         const body = JSON.stringify(user);
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this._http.post('mongodb://admin_jeff:wewillrockyou@ds023448.mlab.com:23448/messenger/user', body, {headers: headers})
+        return this._http.post('http://localhost:3000/user', body, {headers: headers})
             .map(response => response.json())
             .catch(error => Observable.throw(error.json()));
     }
@@ -18,7 +18,7 @@ export class AuthService {
     signin(user: User) {
         const body = JSON.stringify(user);
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this._http.post('/mongodb://admin_jeff:wewillrockyou@ds023448.mlab.com:23448/messenger/signin', body, {headers: headers})
+        return this._http.post('http://localhost:3000/user/signin', body, {headers: headers})
             .map(response => response.json())
             .catch(error => Observable.throw(error.json()));
     }

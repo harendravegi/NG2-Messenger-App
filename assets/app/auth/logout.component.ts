@@ -1,4 +1,5 @@
 import {Component} from "angular2/core";
+import {AuthService} from "./auth.service";
 import {Router} from "angular2/router";
 @Component({
     selector: 'my-logout',
@@ -9,6 +10,10 @@ import {Router} from "angular2/router";
     `
 })
 export class LogoutComponent {
+    constructor(private _authService: AuthService, private _router: Router) {}
+
     onLogout() {
+        this._authService.logout();
+        this._router.navigate(['Signin']);
     }
 }

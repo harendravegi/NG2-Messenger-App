@@ -8,10 +8,10 @@ var mongoose = require('mongoose');
 
 var appRoutes = require('./routes/app');
 var messageRoutes = require('./routes/messages');
+var userRoutes = require('./routes/users');
 
 var app = express();
-mongoose.connect('localhost:27017/node-angular');
-
+mongoose.connect('mongodb://admin_jeff:wewillrockyou@ds023448.mlab.com:23448/messenger');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -31,6 +31,7 @@ app.use(function(req, res, next) {
 });
 
 app.use('/message', messageRoutes);
+app.use('/user', userRoutes);
 app.use('/', appRoutes);
 
 // catch 404 and forward to error handler
